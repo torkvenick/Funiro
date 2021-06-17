@@ -82,7 +82,7 @@ gulp.task('js', function () {
 
 //Подключаем file-include - позволяет соединять разные html файлы в один для удобства чтения разметки. Первый путь - что возвращать, второй со ! - что игнорировать
 gulp.task('htmlInclude', function () {
-  return gulp.src(['app/html/pages/*.html', '!app/html/parts/**/*.html'])
+  return gulp.src(['app/html/*.html', '!app/html/parts/**/*.html'])
     .pipe(fileInclude({  
       prefix: '@@',
       basepath: '@file'

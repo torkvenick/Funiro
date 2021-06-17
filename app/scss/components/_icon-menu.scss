@@ -1,0 +1,69 @@
+
+// Start Burger menu
+.icon-menu {
+  display: none;
+  border: transparent;
+  background-color: transparent;
+  transition: transform 0.2s;
+
+  @media (max-width: $md3+px) {
+    width: 30px;
+    height: 18px;
+    margin-left: auto;
+    position: relative;
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+ /*  &:hover {
+    &::before,
+    &::after,
+    span {
+    }
+  } */
+
+  &::before,
+  &::after,
+  span {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    background-color: #0c0c0c;
+    transition: all 0.3s ease 0s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  &--active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  &--active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+
+  &--active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+}
+// End Burger menu
